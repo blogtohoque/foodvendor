@@ -27,7 +27,7 @@ export default class LoginScreen extends React.Component {
       <Container style={{ backgroundColor: '#fff'}}>
         <Content>
           <Spacer size={80} />
-          <Text style={styles.labelText}>FoodExpress</Text>
+          <Text style={styles.labelText}>FoodExpress <Text style={{fontSize: 12}}>Vendor</Text></Text>
           <Spacer size={70} />
           <Form>
             <Item stackedLabel>
@@ -54,9 +54,6 @@ export default class LoginScreen extends React.Component {
               </Button>
             </View>
             <Spacer size={20} />
-            <Text style={styles.registerWrapper}>Don't have an account? 
-              <Text style={styles.registerText} onPress={()=>navigate('Register')}> Register Now</Text>
-            </Text>
           </Form>
         </Content>
       </Container>
