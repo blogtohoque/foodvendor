@@ -1,24 +1,84 @@
 import { Notifications } from 'expo';
 import React from 'react';
-import { StackNavigator } from 'react-navigation';
+import { StackNavigator, DrawerNavigator } from 'react-navigation';
 
 import MainTabNavigator from './MainTabNavigator';
 import registerForPushNotificationsAsync from '../api/registerForPushNotificationsAsync';
 import HomeScreen from '../screens/HomeScreen';
+import BasicTab from '../screens/tab/basicTab';
+import ConfigTab from '../screens/tab/configTab';
+import ScrollableTab from '../screens/tab/scrollableTab';
+import Home from '../screens/home';
+import SideBar from '../screens/sidebar';
+import NHTab from '../screens/tab';
+import MultiListSwipe from '../screens/listSwipe/multi-list-swipe';
+import NHListAvatar from '../screens/list/list-avatar';
+import MissedOrders from '../screens/miss/missedOrders';
+import RejectedOrders from '../screens/reject/rejectedOrders';
+import OrderDetail from '../screens/OrderDetail';
+
+const Drawer = DrawerNavigator(
+  {
+    Home: {
+      screen: Home
+    },
+    NHTab: {
+      screen: NHTab
+    },
+    MultiListSwipe:{
+      screen: MultiListSwipe
+    },
+    NHListAvatar: { 
+      screen: NHListAvatar 
+    },
+    MissedOrders:{
+      screen: MissedOrders
+    },
+    RejectedOrders:{
+      screen: RejectedOrders
+    }
+   
+  },
+  {
+    initialRouteName: "MultiListSwipe",
+    contentOptions: {
+      activeTintColor: "#e91e63"
+    },
+    contentComponent: props => <SideBar {...props} />
+  }
+);
+
+
 
 const RootStackNavigator = StackNavigator(
   {
-    Main: {
-      screen: HomeScreen,
+    Drawer: {
+      screen: Drawer
+    },
+    BasicTab: {
+      screen: BasicTab
+    },
+    ConfigTab: {
+      screen: ConfigTab
+    },
+    ScrollableTab: {
+      screen: ScrollableTab
+    },
+    OrderDetail: {
+      screen: OrderDetail
     },
   },
   {
-    navigationOptions: () => ({
-      headerTitleStyle: {
-        fontWeight: 'normal',
-      },
-    }),
-  }
+    initialRouteName: "Drawer",
+    headerMode: "none"
+  },
+  // {
+  //   navigationOptions: () => ({
+  //     headerTitleStyle: {
+  //       fontWeight: 'normal',
+  //     },
+  //   }),
+  // }
 );
 
 export default class RootNavigator extends React.Component {
