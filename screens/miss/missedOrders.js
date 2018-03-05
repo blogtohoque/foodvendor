@@ -66,7 +66,11 @@ class MissedOrders extends Component {
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
+        <Header
+          style={{ backgroundColor: "#dc4239" }}
+          androidStatusBarColor="#dc2015"
+          iosBarStyle="light-content"
+        >
           <Left>
             <Button 
             transparent

@@ -55,13 +55,6 @@ const datas = [
     bg: "#1EBC7C",
     types: "9"
   },
-  {
-    name: "Tabs",
-    route: "NHTab",
-    icon: "home",
-    bg: "#AB6AED",
-    types: "3"
-  },
 
 ];
 
