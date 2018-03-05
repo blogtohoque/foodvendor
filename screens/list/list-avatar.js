@@ -85,7 +85,7 @@ class NHListAvatar extends Component {
             dataArray={datas}
             renderRow={data =>
               <ListItem avatar button
-              onPress={() => this.props.navigation.navigate('OrderDetail')}
+              onPress={() => this.props.navigation.navigate('OrderDetail', { data: data })}
               >
                 <Left>
                   <Thumbnail small source={data.img} />
