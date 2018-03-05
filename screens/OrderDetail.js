@@ -33,6 +33,7 @@ class OrderDetail extends Component {
         </Header>
             <Content>
                 <Text> Work</Text>
+                <Text>{params.data.text}</Text>
             </Content>
       </Container>
     );
